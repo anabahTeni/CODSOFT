@@ -60,9 +60,25 @@ document.addEventListener('DOMContentLoaded', function () {
         outputTop.innerText = currentOperand;
         outputBottom.innerText = previousOperand + ' ' +operation;
     }
+
     const numberButtons = document.querySelectorAll('[data-number]');
     const operationButtons = document.querySelectorAll('[data-operation]');
     const equalsButton = document.querySelector('[data-equals]');
     const clearButton = document.querySelector('[data-clear]');
 
-    
+    numberButtons.forEach(button => {
+        button.addEventListener('click',() => {
+            appendNumber( button.innerText);
+        });
+    });
+
+    operationButtons.forEach( button =>{
+      button.addEventListener('click',() => {
+        chooseOperation(button.innerText);
+    })
+      })
+
+    equalsButton.addEventListener('click',compute);
+
+    clearButton.addEventListener('click',clear);
+ })
