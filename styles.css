@@ -64,3 +64,5 @@ main {
 .Top-answer{
     font-size: 1.5rem;
 }
+
+@media (max-with)

@@ -1,59 +1,68 @@
-const numberButtons= document.querySelectorAll('[data-number]')
-const operationButtons = document.querySelectorAll('[data-operation]')
-const equalsButtons= document.querySelector('[data-equals]')
-const ACButtons = document.querySelector('[data-clear]')
-const topAnswerAndTextElement = document.querySelector('[data-top-answer]')
-const bottomAnswerAndTextElement = document.querySelector('[data-bottom-answer ]')
+document.addEventListener('DOMContentLoaded', function () {
+    const outputTop = document.querySelector('[data-top-answer]');
+    const outputBottom = document.querySelector('[data-bottom-answer]');
+    let currentOperand = '';
+    let previousOperand = '';
+    let operation = '';
 
-class Calculator{
-    constructor( topAnswerAndTextElement,bottomAnswerAndTextElement ){
-        this.topAnswerAndTextElement= topAnswerAndTextElement
-        this.bottomAnswerAndTextElement= bottomAnswerAndTextElement
-        this.clear()
+    function clear(){
+        currentOperand ='';
+        previousOperand='';
+        operation='';
+        updateDisplay();
     }
-}
-clear(){
-    this.topAnswer=''
-    this.bottomAnswer=''
-    this.operation = undefined
 
-}
+    function appendNumber(number){
+        if(number==='.'&& currentOperand.includes('.')) return;
+        currentOperand += number;
+        updateDisplay();
+    }
+    
+    function chooseOperation(op){
+        if(currentOperand ==='')return;
+        if(previousOperand !==''){
+            compute();
+        }
+        previousOperand = currentOperand;
+        currentOperand= '';
+        operation =op;
+        updateDisplay();
+    }
+    function compute(){
+        let computation;
+        const prev = parseFloat(previousOperand);
+        const current = parseFloat(currentOperand);
+        if (isNaN(prev) || isNaN(current)) return;
+        switch (operation) {
+            case '+':
+                computation = prev + current;
+                break;
+            case '-':
+                computation = prev - current;
+                break;
+            case 'x':
+                computation= prev* current;
+                break;
+            case '/':
+                computation= prev/current;
+                break;
+            default:
+                return;    
 
-attachNumberToOutput(number){
-    if (number === '.' && this.bottomAnswer.includes('.')) return
-    this.bottomAnswer = this.bottomAnswer.toString() + number.toString()
 
-}
+        }
+        currentOperand = computation;
+        operation = '';
+        previousOperand = '';
+        updateDisplay();
+    }
+    function updateDisplay(){
+        outputTop.innerText = currentOperand;
+        outputBottom.innerText = previousOperand + ' ' +operation;
+    }
+    const numberButtons = document.querySelectorAll('[data-number]');
+    const operationButtons = document.querySelectorAll('[data-operation]');
+    const equalsButton = document.querySelector('[data-equals]');
+    const clearButton = document.querySelector('[data-clear]');
 
-selectOperation(operation){
-    this.operation = operation
-    this.topAnswer =this.bottomAnswer
-    this.bottomAnswer=''
-
-}
-Computed(){
-
-}
-update (){
-    this.topAnswerAndTextElement.innertext = this.bottomAnswerAnswer
-    this.topAnswerAndTextElement.innertext = this.topAnswer
-
-}
-
-
-
-const calculator = new Calculator(topAnswerAndTextElement,bottomAnswerAndTextElement)
-
-numberButtons.forEach(button=> {
-     button.addEventListener('click',() => {
-       calculator.attachNumberToOutput(button.innertext)
-       calculator.update()
-     })
-    })
-
-    operationButtons.forEach(button=> {
-        button.addEventListener('click',() => {
-          calculator.selectOperation(button.innertext)
-          calculator.update()
-        })
-       })
+    
