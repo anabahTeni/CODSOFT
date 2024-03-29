@@ -1,0 +1,94 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: sans-serif;
+}
+
+header{
+    background-color: #FEE6EE;
+    display: flex;
+    justify-content: space-between;
+    height: 97px;
+     
+}
+.brandname{
+    padding: 2.2rem;
+    color: #5F021F;
+    font-weight: bolder;
+    font-size: 1.8rem;
+    
+}
+nav > ul{
+    display: flex;
+  
+    
+}
+nav >ul >li {
+    list-style-type: none;
+    padding: 2rem;
+    a {
+        text-decoration: none;
+    color: #5F021F;
+    font-weight: bold;
+
+    }
+}
+.wine{
+    background-image: url(./Rectangle\ 1.svg);
+    display: flex;
+    justify-content: space-between;
+}
+
+.flowerpic > img{
+  margin-right: ;
+}
+.text{
+    align-items: center;
+    justify-content: center;
+    padding: 4.5rem;
+    margin-top: 12rem;
+}
+.first-text > p{
+    color: #FEE6EE;
+    font-size: 3.5rem;
+    font-weight: bolder;
+    letter-spacing: 1.5;
+}
+.second-text > p{
+    font-size: 1.1rem;
+    color: #FEE6EE;
+    font-weight: lighter;
+    line-height: 1.5;
+    letter-spacing: 1.5;
+    margin-top: 20px;
+    margin-bottom: 15px;
+}
+
+button{
+    padding: 15px 30px;
+
+}
+
+button ,:first-of-type {
+    color: #5F021F;
+    font-size: 17px;
+    border: none;
+    
+}
+
+button, :last-of-type{
+ 
+    
+   
+}
+
+
+
+
+footer{
+    background-color: #5F021F;
+}
