@@ -6,6 +6,7 @@
 
 body{
     font-family: sans-serif;
+    min-height: 100vh;
 }
 
 header{
@@ -41,10 +42,12 @@ nav >ul >li {
     background-image: url(./Rectangle\ 1.svg);
     display: flex;
     justify-content: space-between;
+    min-height: 100%;
 }
 
 .flowerpic > img{
-  margin-right: ;
+  /* margin-right: ; */
+  min-height: 100%;
 }
 .text{
     align-items: center;
@@ -54,12 +57,12 @@ nav >ul >li {
 }
 .first-text > p{
     color: #FEE6EE;
-    font-size: 3.5rem;
+    font-size: 80px;
     font-weight: bolder;
     letter-spacing: 1.5;
 }
 .second-text > p{
-    font-size: 1.1rem;
+    font-size: 20px;
     color: #FEE6EE;
     font-weight: lighter;
     line-height: 1.5;
@@ -73,17 +76,26 @@ button{
 
 }
 
-button ,:first-of-type {
+button:first-of-type {
     color: #5F021F;
     font-size: 17px;
     border: none;
+    margin-right: 40px;
+    border-radius: 4px;
+    height: 48px;
+    width: 178px;
     
 }
 
-button, :last-of-type{
- 
+button:last-of-type{
+    background-color: transparent;
+    color: #D9D9D9;
+    border: #D9D9D9 solid 2px;
+    font-size: 17px;
+    border-radius: 4px;
+    height: 48px;
+    width: 178px;
     
-   
 }
 
 
@@ -92,3 +104,4 @@ button, :last-of-type{
 footer{
     background-color: #5F021F;
 }
+
