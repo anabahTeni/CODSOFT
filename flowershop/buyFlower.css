@@ -1,0 +1,75 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    font-family:  sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #FEE6EE;
+  }
+  
+  .container {
+    max-width: 800px;
+    margin: 50px auto;
+  }
+  
+
+  .menu-header {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #5F021F; 
+  }
+  
+  .menu-item {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #ddd;
+    padding: 10px 0;
+  }
+  
+  .menu-item:last-child {
+    border-bottom: none;
+  }
+  
+  .menu-item-name {
+    font-weight: lighter;
+    color: #333;
+    font-size: 25px;
+    color: #5F021F;
+  }
+  
+  .menu-item-price {
+    color: #5F021F; 
+    font-size: 25px;
+  }
+  
+ 
+  .flower-arrangements {
+    margin-bottom: 40px;
+  }
+  
+  .bouquets {
+    margin-bottom: 40px;
+  }
+  
+  .potted-plants {
+    margin-bottom: 40px;
+  }
+  
+  .gift-baskets {
+    margin-bottom: 40px;
+  }
+  
+  
+  .section-header {
+    background-color: #FFB6C1; 
+    color: #5F021F; 
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+   
+  }
